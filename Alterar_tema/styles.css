@@ -1,102 +1,61 @@
-* {
-  box-sizing: border-box;
+:root{
+  --w: #fff;
+  --d: #000;
+  --o: #ff902e;
+  --r: rgb(255, 122, 0)
+}
+[data-theme="dark"]{
+  --w: #000;
+  --d: #fff;
+  --o: plum;
+  --r: purple;
+  
+  
+}
+*{
   margin: 0;
   padding: 0;
-  font-family: "Poppins", sans-serif;
 }
-
-body {
-  width: 100%;
-  min-height: 100vh;
-  background: linear-gradient(90deg, #00dbde 0%, #fc00ff 100%);
+body{
   display: flex;
+  height: 100vh;
   justify-content: center;
   align-items: center;
+  background-color: var(--w);
 }
-
-.container {
-  background-color: #fafafa;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-  width: 300px;
-  max-width: 100%;
-  overflow: hidden;
+div{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--d);
+  color: var(--w);
+  padding: .9rem;
+  border-radius: 20px 0px;
+  height: 130px;
+  position: absolute;
 }
-
-.header {
-  background-color: #eee;
-  padding: 20px;
+button{
+  background-color: var(--r);
+  border-radius: 50%;
+  border: none;
+  padding: .3rem;
+  height: 60px;
+  width: 60px;
+  margin-top: 20px;
+  cursor: poiter;
 }
-
-.form {
-  padding: 20px;
-}
-
-.form-control {
-  margin-bottom: 10px;
-  padding-bottom: 20px;
+button:hover{
+  background-color: var(--o);
+  transition: .7s; /*500 mile segundos (500ms)*/
   position: relative;
+  /*
+  height: 55px;
+  width: 55px;
+  */
 }
-
-.form-control label {
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
-.form-control input {
-  border: 2px solid #f0f0f0;
-  display: block;
-  border-radius: 10px;
-  font-size: 14px;
-  width: 100%;
-  padding: 10px;
-}
-
-.form-control i {
-  position: absolute;
-  top: 45px;
-  right: 10px;
-  visibility: hidden;
-}
-
-.form-control small {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  visibility: hidden;
-}
-
-.form button {
-  background-color: #fc00ff;
-  border: 2px solid #fc00ff;
-  color: #fff;
-  font-size: 14px;
-  width: 100%;
-  border-radius: 10px;
-  padding: 10px;
-}
-
-/* Error and Success */
-.form-control.success input {
-  border-color: #2ecc71;
-}
-
-.form-control.error input {
-  border-color: #e74c3c;
-}
-
-.form-control.success i.fa-check-circle {
-  color: #2ecc71;
-  visibility: visible;
-}
-
-.form-control.error i.fa-exclamation-circle {
-  color: #e74c3c;
-  visibility: visible;
-}
-
-.form-control.error small {
-  visibility: visible;
-  color: #e74c3c;
+svg{
+  height: 24px;
+  width: 24px;
+  color: var(--w);
 }
 
