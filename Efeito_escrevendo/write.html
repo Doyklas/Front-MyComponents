@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <title>Write</title>
+</head>
+<style>
+*{
+  padding: 0;
+  margin: 0;
+}
+body{
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  background-color: black;
+  height: 100vh;
+}
+h1{
+  color: white;
+}
+p{
+  color: white;
+}
+div{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px; 
+}
+a{
+  color: aquamarine;
+  text-decoration: none;
+}
+/* piscando o cusrso */
+h1::after{
+  content: '|';
+  margin-left: 5px;
+  opacity: 1;
+  animation: pisca .7s infinite;
+}
+@keyframes pisca{
+  0%, 100%{
+    opacity: 1;
+  }
+  50%{
+    opacity: 0;
+  }
+}
+</style>
+<body>
+  <div>
+    <h1>
+    Ola, me chamo Douglas Henrique
+    </h1>
+    <p>referencia: <a href="https://youtu.be/zx2axQoY_YM?si=aOmxc1SlRC176XC1" target="_blank">Click Aqui</a></p>
+  </div>
+  
+
+  <script>
+		function typeWriter(elemento){
+		  const textoArray = elemento.innerHTML.split('');
+		  elemento.innerHTML = '';
+		  textoArray.forEach((letra, i) => {
+        setTimeout(() => elemento.innerHTML += letra, 75 * i)
+		});
+    }
+  const titulo = document.querySelector('h1');
+  typeWriter(titulo);
+</script>
+</body>
+
+</html>
